@@ -22,16 +22,20 @@ Route::get('/home', function () {
 Route::get('/create-order', function () {
     return view('create-order');
 });
+Route::get('/add-product',function(){
+    return view('add-product');
+});
 Route::post('/create-order','CreateOrderController@store');
 Route::get('/about',function(){
 
     $name='<span style="color:green">Hlong</span>';
-   return view('about')->with('name',$name);
+    return view('about')->with('name',$name);
 });
 
 
 Route::get('/order','CreateOrderController@index');
 Route::get('/order/{id}','CreateOrderController@show');
+
 
 /*
 |--------------------------------------------------------------------------

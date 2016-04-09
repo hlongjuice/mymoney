@@ -56,7 +56,7 @@ class CreateOrderController extends Controller
         $order_detail->quantity=$request->input('quantity');
         $order_detail->save();
 
-        return $order_detail->name;
+        return $order_detail;
 
 
 //        $exist_product=Product::where('name','=',$request->input('product_name'))->get();

@@ -1,4 +1,10 @@
 @extends('layouts.master')
+{{--@section('add_css')--}}
+	{{--<link href="{{ asset('css/selectize.bootstrap3.css')}}" rel="stylesheet">--}}
+{{--@endsection--}}
+@section('script')
+	<script src="{{ asset('js/standalone/selectize.min.js')}}"></script>
+@endsection
 @section('content')
 	<div class="panel panel-info">
 		<div class="panel-heading">
