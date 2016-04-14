@@ -19,19 +19,25 @@ Route::get('/home', function () {
     return view('home');
 });
 
-Route::get('/create-order', function () {
+Route::get('/create-order', function ()
+{
     return view('create-order');
 });
-Route::get('/add-product',function(){
+Route::post('/create-order','CreateOrderController@store');
+
+Route::get('/add-product',function()
+{
     return view('add-product');
 });
-Route::post('/create-order','CreateOrderController@store');
-Route::get('/about',function(){
+Route::post('/add-product','AddProductController@add');
 
+Route::get('/about',function()
+{
     $name='<span style="color:green">Hlong</span>';
     return view('about')->with('name',$name);
 });
 
+Route::get('/product','ProductController@show');
 
 Route::get('/order','CreateOrderController@index');
 Route::get('/order/{id}','CreateOrderController@show');
