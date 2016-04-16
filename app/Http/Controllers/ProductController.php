@@ -23,7 +23,6 @@ class ProductController extends Controller
         $new_product->sale_price=$request->input('sale_price');
         $new_product->description=$request->input('description');
         $new_product->save();
-
-        return $new_product;
+        return view('product')->with('products',Product::all());
     }
 }
