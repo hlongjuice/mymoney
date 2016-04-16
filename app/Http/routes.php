@@ -24,12 +24,12 @@ Route::get('/create-order', function ()
     return view('create-order');
 });
 Route::post('/create-order','CreateOrderController@store');
-
+Route::get('/product','ProductController@show');
 Route::get('/add-product',function()
 {
     return view('add-product');
 });
-Route::post('/add-product','AddProductController@add');
+Route::post('/add-product','ProductController@add');
 
 Route::get('/about',function()
 {
@@ -37,7 +37,7 @@ Route::get('/about',function()
     return view('about')->with('name',$name);
 });
 
-Route::get('/product','ProductController@show');
+
 
 Route::get('/order','CreateOrderController@index');
 Route::get('/order/{id}','CreateOrderController@show');

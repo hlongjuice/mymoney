@@ -12,7 +12,8 @@ class ProductController extends Controller
 {
     public function show(){
         $products= Product::all();
-        return view('product',$products);
+          return view('product')->with('products',$products);
+//        echo 'Hello';
     }
     public function add(Request $request){
 

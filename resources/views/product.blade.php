@@ -9,10 +9,10 @@
         </tr>
         @foreach($products as $product)
             <tr>
-                <td>$product->id</td>
-                <td>$product->name</td>
-                <td>$product->cost_price</td>
-                <td>$product->sale_price</td>
+                <td>{{$product->id }}</td>
+                <td>{{$product->name }}</td>
+                <td>{{$product->cost_price}}</td>
+                <td>{{$product->sale_price}}</td>
             </tr>
             @endforeach
 
