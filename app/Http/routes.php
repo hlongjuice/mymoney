@@ -19,18 +19,20 @@ Route::get('/home', function () {
     return view('home');
 });
 
-Route::get('/create-order', function ()
+Route::get('/create_order', function ()
 {
-    return view('create-order');
+    return view('create_order');
 });
-Route::post('/create-order','CreateOrderController@store');
-Route::get('/product','ProductController@show');
-Route::get('/add-product',function()
-{
-    return view('add-product');
-});
-Route::post('/add-product','ProductController@add');
+Route::post('/create_order','CreateOrderController@store');
+//Route::get('/product','ProductController@show');
+//Route::post('/product','ProductController@store');
+//Route::get('/add_product',function()
+//{
+//    return view('add-product');
+//});
+//Route::post('/add_product','ProductController@add');
 
+Route::resource('product','ProductController');
 Route::get('/about',function()
 {
     $name='<span style="color:green">Hlong</span>';

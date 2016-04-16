@@ -17,7 +17,7 @@
                 <td>{{$product->sale_price}}</td>
             </tr>
 
-            @endforeach
+        @endforeach
         {!! Form::open(array('url'=>'/product','class' =>'form-horizontal')) !!}
         <tr><td>{{ Form::button('ลบ',array('type'=>'submit')) }}</td></tr>
 
