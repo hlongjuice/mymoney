@@ -12,7 +12,7 @@ class ProductController extends Controller
 {
     public function show(){
         $products= Product::all();
-        return view('product')->with('products',$products);
+        return view('products')->with('products',$products);
 //        echo 'Hello';
     }
     public function add(Request $request){
@@ -23,7 +23,7 @@ class ProductController extends Controller
         $new_product->sale_price=$request->input('sale_price');
         $new_product->description=$request->input('description');
         $new_product->save();
-        return view('product')->with('products',Product::all());
+        return view('products')->with('products',Product::all());
     }
     public function delete(){
         $product=new Product();
@@ -32,7 +32,7 @@ class ProductController extends Controller
 
 
         echo 'hlong';
-        return view('/product')->with('products',$product->all());
+        return view('/products')->with('products',$product->all());
     }
     public function store(){
         $product = new Product();
@@ -40,6 +40,6 @@ class ProductController extends Controller
         $product->cost_price='20';
         $product->sale_price='50';
         $product->save();
-        return view('product')->with('products',$product->all());
+        return view('products')->with('products',$product->all());
     }
 }

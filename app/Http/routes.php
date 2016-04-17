@@ -32,7 +32,7 @@ Route::post('/create_order','CreateOrderController@store');
 //});
 //Route::post('/add_product','ProductController@add');
 
-Route::resource('product','ProductController');
+Route::resource('products','ProductController');
 Route::get('/about',function()
 {
     $name='<span style="color:green">Hlong</span>';

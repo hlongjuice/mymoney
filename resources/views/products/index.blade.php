@@ -18,7 +18,8 @@
             </tr>
 
         @endforeach
-        {!! Form::open(array('url'=>'/product','class' =>'form-horizontal')) !!}
+        {!! Form::open(array('url'=>'products/'.'2','class' =>'form-horizontal')) !!}
+        {{ Form::hidden('_method', 'DELETE') }}
         <tr><td>{{ Form::button('ลบ',array('type'=>'submit')) }}</td></tr>
 
 
