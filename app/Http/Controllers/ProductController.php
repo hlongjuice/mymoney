@@ -3,11 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
-use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use Illuminate\Http\Request;
 class ProductController extends Controller
 {
     /**
@@ -28,7 +26,6 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
         return view('add_product');
     }
 
@@ -40,9 +37,10 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $product=$request->all();
+         Product::create($product);
+         return redirect('products');
     }
-
     /**
      * Display the specified resource.
      *
@@ -62,7 +60,8 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product=Product::findOrNew($id);
+        return view('products.edit')->with('product',$product);
     }
 
     /**
@@ -74,7 +73,10 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $product=$request->all();
+        Product::findOrNew($id)->fill($product)->save();
+        return redirect('products');
+
     }
 
     /**
@@ -85,6 +87,7 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-
+        Product::findOrNew($id)->delete();
+        return redirect('products');
     }
 }

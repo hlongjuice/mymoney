@@ -19,10 +19,10 @@ Route::get('/home', function () {
     return view('home');
 });
 
-Route::get('/create_order', function ()
+Route::get('/create_order',['as'=>'create_order', function ()
 {
     return view('create_order');
-});
+}]);
 Route::post('/create_order','CreateOrderController@store');
 //Route::get('/product','ProductController@show');
 //Route::post('/product','ProductController@store');
@@ -30,7 +30,7 @@ Route::post('/create_order','CreateOrderController@store');
 //{
 //    return view('add-product');
 //});
-//Route::post('/add_product','ProductController@add');
+Route::get('/add_product','ProductController@create');
 
 Route::resource('products','ProductController');
 Route::get('/about',function()

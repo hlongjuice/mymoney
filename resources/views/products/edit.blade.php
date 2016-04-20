@@ -1,11 +1,17 @@
 @extends('layouts.master')
 @section('content')
+
     <div class="panel panel-info">
         <div class="panel-heading" >
-            เพิ่มสินค้า
+             แก้ไข {{$product->name}}
         </div>
         <div class="panel-body">
-            {!! Form::open(array('route'=>'products.store','class' =>'form-horizontal')) !!}
+
+        {!! Form::model($product, [
+        'method' => 'PATCH',
+        'route' => ['products.update', $product->id],
+        'class' =>'form-horizontal'
+         ]) !!}
             <div class="row">
                 <div class="col-xs-12 col-md-6">
                     <div class="form-group">
@@ -41,7 +47,5 @@
                     </div>
                 </div>
             </div>
-            {!!Form::close() !!}
-        </div>
-    </div>
+    {!!Form::close() !!}
 @endsection
