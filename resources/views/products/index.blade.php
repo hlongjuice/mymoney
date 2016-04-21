@@ -2,9 +2,9 @@
 @section('content')
     <table class="table table-striped">
         <tr class="info">
-            {!! Form::open(array('route'=>array('products.destroy',$products))) !!}
+            {!! Form::open(array('route'=>array('products.destroy','10'))) !!}
             {{ Form::hidden('_method', 'DELETE') }}
-            <th>{!! Form::checkbox('check_product',array('id'=>'select_all')) !!}</th>
+            <th>{!! Form::checkbox('check_product','',null,array('id'=>'select_all')) !!}</th>
             <th>รหัสสินค้า</th>
             <th>ชื่อสินค้า</th>
             <th>ราคาทุน</th>
@@ -14,18 +14,27 @@
         </tr>
         @foreach($products as $product)
             <tr>
-                <td>{!! Form::checkbox('check_product'),array('class'=>'chkbox1') !!}</td>
-                <td>{{$product->id }}</td>
+                <td width="10%">{!! Form::checkbox('checkbox[]',$product->id,null,array('class'=>'checkbox1')) !!}</td>
+                <td width="10%">{{$product->id }}</td>
                 <td>{{$product->name }}</td>
                 <td>{{$product->cost_price}}</td>
                 <td>{{$product->sale_price}}</td>
                 <td><a href="{{ route('products.edit', $product->id) }}" class="btn btn-primary">แก้ไข</a></td>
-                {!! Form::open(array('route'=>array('products.destroy',$product->id,),'class' =>'form-horizontal')) !!}
-                {{ Form::hidden('_method', 'DELETE') }}
+                {{--{!! Form::open(array('route'=>array('products.destroy',$product->id),'class' =>'form-horizontal')) !!}--}}
+                {{--{{ Form::hidden('_method', 'DELETE') }}--}}
                 <td>{{ Form::button('ลบ',array('type'=>'submit','class'=>'btn btn-danger')) }}</td>
-                {!! Form::close() !!}
+                {{--{!! Form::close() !!}--}}
             </tr>
         @endforeach
+        <tr><td>{{ Form::submit('ลบทั้งหมด',array('class'=>'btn btn-danger','name'=>'delete_all'))}}</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        {!! Form::close() !!}
     </table>
 @endsection
 @section('page-script')

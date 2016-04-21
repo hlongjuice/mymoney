@@ -85,9 +85,15 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $ids)
     {
-        Product::findOrNew($id)->delete();
+//        Product::destroy($ids->all());
+//        echo $ids->all();
+//        $resutl=$ids->all();
+//        foreach($resutl as $id)
+//        echo $id.'<br>';
+      //  print_r($ids->get('checkbox'));
+        Product::destroy($ids->get('checkbox'));
         return redirect('products');
     }
 }

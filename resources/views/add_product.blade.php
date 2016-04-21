@@ -26,6 +26,12 @@
                             {!! Form::text('sale_price',null,array('class'=>'form-control','placeholder'=>'0.00')) !!}
                         </div>
                     </div>
+                    <div class="form-group">
+                        {!! Form::label('file_upload','รูป',array('class'=>'col-xs-3 col-md-2 control-label' )) !!}
+                        <div class="col-xs-8 col-md-10 ">
+                            {!! Form::file('file_upload') !!}
+                        </div>
+                    </div>
                 </div>
                 <div class="col-xs-12 col-md-6">
                     <div class="form-group">

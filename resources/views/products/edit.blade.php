@@ -42,7 +42,7 @@
                     </div>
                     <div class="form-group">
                         <div class="col-xs-5 col-xs-push-6">
-                            {!! Form::button('เพิ่มสินค้า',array('class'=>'btn btn-danger pull-right','type'=>'submit')) !!}
+                            {!! Form::button('แก้ไขสินค้า',array('class'=>'btn btn-danger pull-right','type'=>'submit')) !!}
                         </div>
                     </div>
                 </div>
