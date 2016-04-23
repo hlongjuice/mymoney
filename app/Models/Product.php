@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     //
-    protected $fillable =['name','cost_price','sale_price'];
+    protected $fillable =['name','cost_price','sale_price','description'];
     public  function oderDetail()
     {
         return  $this->hasMany('App\Models\OrderDetail');

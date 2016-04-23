@@ -18,6 +18,7 @@ class CreateProductsTable extends Migration
             $table->decimal('cost_price',8,2);
             $table->decimal('sale_price',8,2);
             $table->mediumText('description');
+            $table->string('images');
             $table->timestamps();
         });
     }

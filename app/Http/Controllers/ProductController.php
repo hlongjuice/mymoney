@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Intervention\Image\Facades\Image;
 use Illuminate\Http\Request;
+
 class ProductController extends Controller
 {
     /**
@@ -37,9 +39,21 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-         $product=$request->all();
-         Product::create($product);
-         return redirect('products');
+//        $product=$request->file('file_upload')->move(public_path('images'));
+        $product=$request->all();
+        $path=public_path('images/'.$request->file('file_upload')->getClientOriginalName());
+        $product['file_upload']=$path;
+        Image::make($request->file('file_upload')->getRealPath())->save($path);
+        print_r($product);
+//        echo public_path('images');
+
+//         $product=$request->all();
+//        $product=new Product();
+//       $product->images= $request->file('file_upload')->move('images','first');
+//        print_r($product);
+//        echo $product;
+//         Product::create($product);
+//         return redirect('products');
     }
     /**
      * Display the specified resource.

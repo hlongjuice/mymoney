@@ -5,7 +5,7 @@
             เพิ่มสินค้า
         </div>
         <div class="panel-body">
-            {!! Form::open(array('route'=>'products.store','class' =>'form-horizontal')) !!}
+            {!! Form::open(array('route'=>'products.store','class' =>'form-horizontal','files'=> true )) !!}
             <div class="row">
                 <div class="col-xs-12 col-md-6">
                     <div class="form-group">
