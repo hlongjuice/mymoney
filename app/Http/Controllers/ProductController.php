@@ -39,12 +39,13 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-//        $product=$request->file('file_upload')->move(public_path('images'));
         $product=$request->all();
-        $path=public_path('images/'.$request->file('file_upload')->getClientOriginalName());
-        $product['file_upload']=$path;
-        Image::make($request->file('file_upload')->getRealPath())->save($path);
-        print_r($product);
+        $path='images/'.$request->file('image')->getClientOriginalName();
+        $product['image']=$path;
+        Image::make($request->file('image')->getRealPath())->resize(200,200)->save($path);
+//        print_r($product);
+        Product::create($product);
+        return redirect('products');
 //        echo public_path('images');
 
 //         $product=$request->all();

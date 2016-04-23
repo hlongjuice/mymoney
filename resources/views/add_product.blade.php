@@ -27,9 +27,9 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        {!! Form::label('file_upload','รูป',array('class'=>'col-xs-3 col-md-2 control-label' )) !!}
+                        {!! Form::label('image','รูป',array('class'=>'col-xs-3 col-md-2 control-label' )) !!}
                         <div class="col-xs-8 col-md-10 ">
-                            {!! Form::file('file_upload') !!}
+                            {!! Form::file('image') !!}
                         </div>
                     </div>
                 </div>

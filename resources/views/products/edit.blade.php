@@ -35,6 +35,18 @@
                 </div>
                 <div class="col-xs-12 col-md-6">
                     <div class="form-group">
+                        {!! Form::label('image','รูป',array('class'=>'col-xs-3 col-md-3  control-label' )) !!}
+                        <div class="col-xs-8 col-md-9">
+                           <img src="{{url($product->image)}}" width="100" height="100">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        {!! Form::label('image','รูป',array('class'=>'col-xs-3 col-md-3  control-label' )) !!}
+                        <div class="col-xs-8 col-md-9">
+                            {!! Form::file('image',null,array('files'=>true)) !!}
+                        </div>
+                    </div>
+                    <div class="form-group">
                         {!! Form::label('description','ลายละเอียดอื่นๆ',array('class'=>'col-xs-3 col-md-3  control-label' )) !!}
                         <div class="col-xs-8 col-md-9">
                             {!! Form::textarea('description',null,array('class'=>'form-control','placeholder'=>'ลายละเอียดเพิ่มเติม','rows'=>'4')) !!}
